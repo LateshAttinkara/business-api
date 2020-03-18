@@ -1,4 +1,4 @@
-package com.latesh.businessapi.model.destination;
+package com.latesh.businessapi.model.source;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -7,36 +7,36 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 
-@lombok.Value
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Quote {
+public class QuoteFromSource {
 
-    @JsonProperty("quote_type")
+    @JsonProperty("type")
     private String type;
 
-    @JsonProperty("quote_value")
-    private Value value;
+    @JsonProperty("value")
+    private ValueFromSource value;
 
-    @JsonGetter("quote_type")
+    @JsonGetter("type")
     public String getType() {
         return type;
     }
 
-    @JsonSetter("quote_type")
+    @JsonGetter("type")
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonGetter("quote_value")
-    public Value getValue() {
+    @JsonGetter("value")
+    public ValueFromSource getValue() {
         return value;
     }
 
-    @JsonSetter("quote_value")
-    public void setValue(Value value) {
+    @JsonSetter("value")
+    public void setValue(ValueFromSource value) {
         this.value = value;
     }
 }

@@ -1,41 +1,39 @@
-package com.latesh.businessapi.model.destination;
+package com.latesh.businessapi.model.source;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import com.googlecode.jmapper.annotations.JMap;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
-public class Value {
+public class ValueFromSource {
 
-    @JsonProperty("quote_id")
+    @JsonProperty("id")
     private Integer id;
 
-    @JsonProperty("quote_description")
+    @JsonProperty("quote")
     private String quote;
 
-    @JsonGetter("quote_id")
+    @JsonGetter("id")
     public Integer getId() {
         return id;
     }
 
-    @JsonSetter("quote_id")
+    @JsonSetter("id")
     public void setId(Integer id) {
         this.id = id;
     }
 
-    @JsonGetter("quote_description")
+    @JsonGetter("quote")
     public String getQuote() {
         return quote;
     }
 
-    @JsonSetter("quote_description")
+    @JsonSetter("quote")
     public void setQuote(String quote) {
         this.quote = quote;
     }
